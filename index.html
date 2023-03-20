@@ -2,222 +2,160 @@
 <html>
 
 <head>
-  <meta charset="UTF-8">
-  <title>Printed Forge Factory - 3D Printing Creations</title>
+  <title>Printed Forge Factory</title>
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
     body {
       font-family: Arial, sans-serif;
-      font-size: 16px;
+      margin: 0;
+      padding: 0;
+      background-color: #F0F0F0;
+      color: #333;
     }
 
-    header {
+    #menu-bar {
+      background-color: #F0F0F0;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      background-color: #f7f7f7;
-      padding: 20px;
+      padding: 10px;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1;
     }
 
-    #logo {
-      font-size: 24px;
-      font-weight: bold;
+    #menu-bar img {
+      height: 50px;
     }
 
-    header a {
-      margin-left: 20px;
-      color: #0077be;
-      text-decoration: none;
-      font-weight: bold;
+    #menu-bar button {
+      background-color: #357edd;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
     }
 
-    header a:hover {
-      text-decoration: underline;
-    }
-
-    #hero {
-      background-color: #e5e5e5;
-      color: #000;
-      text-align: center;
-      padding: 100px 20px;
-    }
-
-    #hero h1 {
-      font-size: 48px;
-      margin-bottom: 20px;
-    }
-
-    #hero p {
-      font-size: 24px;
-    }
-
-    #products {
-      background-color: #fff;
-      color: #000;
-      text-align: center;
-      padding: 50px 20px;
-    }
-
-    #products h2 {
-      font-size: 36px;
-      margin-bottom: 20px;
-    }
-
-    #products p {
-      font-size: 20px;
-      margin-bottom: 20px;
-    }
-
-    #products div {
-      display: flex;
-      justify-content: space-around;
-      flex-wrap: wrap;
-      margin-top: 20px;
-    }
-
-    #products img {
-      max-width: 300px;
-      margin: 20px;
+    #menu-bar button:hover {
+      background-color: #2458a6;
     }
 
     #attention {
-      background-color: #f7f7f7;
-      color: #000;
+      background-color: #EFEFEF;
       text-align: center;
-      padding: 50px 20px;
+      padding: 50px 0;
+      margin-top: 100px;
     }
 
-    #attention h2 {
-      font-size: 36px;
+    #attention #logo-text {
+      font-size: 32px;
       margin-bottom: 20px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
     }
 
     #attention p {
-      font-size: 20px;
-      margin-bottom: 20px;
+      margin: 0 auto;
+      max-width: 600px;
+      line-height: 1.5;
     }
 
-    #gifts {
-      background-color: #fff;
-      color: #000;
-      text-align: center;
-      padding: 50px 20px;
+    #attention ul {
+      list-style: none;
+      padding: 0;
+      max-width: 600px;
+      margin: 0 auto;
     }
 
-    #gifts h2 {
-      font-size: 36px;
-      margin-bottom: 20px;
-    }
-
-    #gifts p {
-      font-size: 20px;
-      margin-bottom: 20px;
-    }
-
-    #gifts ul {
-      text-align: left;
-      margin-bottom: 20px;
-    }
-
-    #gifts li {
-      font-size: 20px;
+    #attention li {
       margin-bottom: 10px;
+      text-align: left;
+    }
+
+    #bambulabs {
+      background-color: #F0F0F0;
+      text-align: center;
+      padding: 50px 0;
+    }
+
+    #bambulabs #logo-text {
+      font-size: 32px;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    #bambulabs img {
+      max-width: 100%;
     }
 
     #form {
-      background-color: #fff;
-      color: #000;
+      background-color: #EFEFEF;
       text-align: center;
-      padding: 50px 20px;
+      padding: 50px 0;
     }
 
-    #form h2 {
-      font-size: 36px;
+    #form #logo-text {
+      font-size: 32px;
       margin-bottom: 20px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
     }
 
-    #form input[type="text"],
-    #form input[type="email"],
+    #form form {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    #form input[type=text],
+    #form input[type=email],
     #form textarea {
-      width: 100%;
+      display: block;
       margin-bottom: 20px;
+      width: 100%;
       padding: 10px;
-      border: none;
       border-radius: 5px;
-      font-size: 18
+      border: none;
     }
 
-    #form input[type="submit"] {
-      background-color: #0077be;
+    #form textarea {
+      height: 100px;
+    }
+
+    #form input[type=submit] {
+      background-color: #357edd;
       color: #fff;
-      padding: 10px 20px;
       border: none;
+      padding: 10px 20px;
       border-radius: 5px;
-      font-size: 18px;
       cursor: pointer;
-      transition: all 0.3s ease;
     }
 
-    #form input[type="submit"]:hover {
-      background-color: #005b8a;
+    #form input[type=submit]:hover {
+      background-color: #2458a6;
     }
 
     #contact {
-      background-color: #f7f7f7;
-      color: #000;
+      background-color: #F0F0F0;
       text-align: center;
-      padding: 50px 20px;
-    }
-
-    #contact h2 {
-      font-size: 36px;
+      padding: 50px 0;
+   
+    #contact #logo-text {
+      font-size: 32px;
       margin-bottom: 20px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
     }
 
     #contact p {
-      font-size: 20px;
-      margin-bottom: 20px;
-    }
-
-    #contact form {
       margin: 0 auto;
-      max-width: 500px;
+      max-width: 600px;
+      line-height: 1.5;
     }
 
-    #contact input[type="text"],
-    #contact input[type="email"],
-    #contact textarea {
-      width: 100%;
-      margin-bottom: 20px;
-      padding: 10px;
-      border: none;
-      border-radius: 5px;
-      font-size: 18px;
-    }
-
-    #contact input[type="submit"] {
-      background-color: #0077be;
-      color: #fff;
-      padding: 10px 20px;
-      border: none;
-      border-radius: 5px;
-      font-size: 18px;
-      cursor: pointer;
-      transition: all 0.3s ease;
-    }
-
-    #contact input[type="submit"]:hover {
-      background-color: #005b8a;
-    }
-
-    footer {
-      background-color: #000;
-      color: #fff;
+    #footer {
+      background-color: #F0F0F0;
       text-align: center;
       padding: 20px;
       position: absolute;
@@ -225,40 +163,72 @@
       width: 100%;
     }
 
-    #logo-text {
-      font-size: 30px;
-      font-weight: bold;
-      color: #0077be;
-      text-transform: uppercase;
-      letter-spacing: 5px;
-      text-align: center;
-      padding: 20px 0;
-      background-color: #f7f7f7;
+    #footer p {
+      margin: 0;
+      font-size: 14px;
+      color: #666;
+    }
+
+    /* Media Queries */
+
+    @media only screen and (max-width: 768px) {
+      #menu-bar {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      #menu-bar button {
+        margin-top: 10px;
+      }
+    }
+
+    @media only screen and (max-width: 480px) {
+      #menu-bar img {
+        height: 30px;
+      }
+
+      #menu-bar button {
+        font-size: 12px;
+        padding: 8px 16px;
+      }
+
+      #attention #logo-text {
+        font-size: 24px;
+      }
+
+      #attention p {
+        font-size: 14px;
+      }
+
+      #attention li {
+        font-size: 14px;
+      }
+
+      #bambulabs #logo-text {
+        font-size: 24px;
+      }
+
+      #contact #logo-text {
+        font-size: 24px;
+      }
+
+      #contact p {
+        font-size: 14px;
+      }
+
+      #footer p {
+        font-size: 12px;
+      }
     }
   </style>
 </head>
 
 <body>
-  <header>
-    <div id="logo-text">Printed Forge Factory</div>
-    <nav>
-      <a href="#">Shop</a>
-      <a href="#">Contact</a>
-    </nav>
-  </header>
-
-  <div id="hero">
-    <h1>Welcome to Printed Forge Factory</h1>
-    <p>Creating high-quality 3D prints for all your needs</p>
-  </div>
-
-  <div id="products">
-    <h2>Our Products</h2>
-    <p>At Printed Forge Factory, we specialize in creating unique and high-quality 3D prints. Check out some of our featured products:</p>
+  <div id="menu-bar">
+    <img src="https://i.imgur.com/6e8pGd9.png" alt="Printed Forge Factory Logo">
     <div>
-      <img src="https://i.imgur.com/O8ls0ST.jpg" alt="3D Printed Dragon">
-      <img src="https://i.imgur.com/mABYxOR.jpg" alt="Fidget Spinner">
-      <img src="https://i.imgur.com/4lRVf6I.jpg" alt="3D Printed Keychain">
+      <a href="https://www.etsy.com/shop/printedforgefactory"><button>Shop</button></a>
+      <a href="#form"><button>Contact</button></a>
     </div>
   </div>
 
@@ -274,41 +244,37 @@
       <li>Made in USA - All of our prints are done in Las Vegas, NV on a Bambu Labs X1 Carbon printer</li>
     </ul>
   </div>
-    <div id="logo-text">Our 3D Prints Make Great Gifts</div>
-    <p>Personalized gifts are a great way to show your loved ones that you care. And what's more personal than a custom 3D print? At Printed Forge Factory, we offer a wide variety of prints that can be customized to make the perfect gift for any occasion. Here are just a few reasons why personalized 3D prints make great gifts:</p>
-    <ul>
-      <li>Unique - 3D prints are one-of-a-kind creations that can't be found anywhere else</li>
-      <li>Thoughtful - A custom print shows that you put time and effort into choosing the perfect gift</li>
-      <li>Memorable - 3D prints can serve as lasting mementos of special moments or events</li>
-      <li>Versatile - There's a 3D print for every interest or hobby, making it easy to find the perfect gift for anyone</li>
-    </ul>
-  </div>
 
   <div id="bambulabs">
-    <div id="logo-text">Our 3D Printers</div>
+    <div id="logo-text">Bambu Labs X1 Carbon</div>
     <img src="https://www.septillion.co.th/wp-content/uploads/BambuLab_X1_Carbon-Combo_on_web-2.webp" alt="Bambu Labs X1 Carbon">
-    <p>All of our prints are done on a Bambu Labs X1 Carbon printer. This high-quality printer allows us to create prints with incredible detail and precision. Whether you're looking for a unique piece of home decor or a custom phone case, our Bambu Labs X1 Carbon printer can bring your ideas to life.</p>
+  </div>
+  
+<div id="gifts">
+    <div id="logo-text">3D Prints for Gifts</div>
+    <p>Personalized gifts are a great way to show someone that you care. With 3D printing, you can create truly unique gifts that are sure to impress. At Printed Forge Factory, we offer a wide range of 3D printed gifts that are perfect for any occasion. Here are just a few of the benefits of choosing a 3D printed gift:</p>
+    <ul>
+      <li>Personalization - 3D printing allows for a level of personalization that is not possible with traditional manufacturing methods. You can create a gift that is truly unique and tailored to the recipient.</li>
+      <li>Customization - With 3D printing, you can create gifts that are customized to the recipient's interests or hobbies. For example, you can create a 3D printed model of their favorite movie character or video game item.</li>
+      <li>Quality - 3D printing allows for a level of detail and precision that is unmatched by traditional manufacturing methods. You can create gifts that are of the highest quality and look stunning.</li>
+      <li>Versatility - 3D printing can be used to create a wide range of gifts, from jewelry and figurines to phone cases and home decor.</li>
+    </ul>
   </div>
 
   <div id="form">
     <div id="logo-text">Contact Us</div>
-    <form action="#" method="post">
-      <input type="text" name="name" placeholder="Name" required>
-      <input type="email" name="email" placeholder="Email" required>
-      <textarea name="message" placeholder="Message" rows="5" required></textarea>
+    <p>Have a question or want to place an order? Fill out the form below and we'll get back to you as soon as possible.</p>
+    <form method="post" action="https://formspree.io/f/xpzkpljn">
+      <input type="text" placeholder="Name" name="name" required>
+      <input type="email" placeholder="Email" name="_replyto" required>
+      <textarea placeholder="Message" name="message" required></textarea>
       <input type="submit" value="Send">
     </form>
   </div>
 
-  <div id="contact">
-    <div id="logo-text">Get In Touch</div>
-    <p>If you have any questions or comments about our products, feel free to reach out to us using the contact form above. We'd love to hear from you!</p>
+  <div id="footer">
+    <p>© 2023 Printed Forge Factory. All rights reserved.</p>
   </div>
-
-  <footer>
-    <p>&copy; 2023 Printed Forge Factory. All rights reserved.</p>
-  </footer>
 </body>
 
 </html>
-
