@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PrintedForgeFactory</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
+        #header {
+            background: #333;
+            color: white;
+            padding: 1rem;
+        }
+        #header h1 {
+            text-align: center;
+        }
+        #main {
+            padding: 2rem;
+        }
+        #services {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+        }
+        .service {
+            width: 30%;
+            padding: 2rem;
+            text-align: center;
+            border: 1px solid #ccc;
+            margin-bottom: 1rem;
+        }
+        #etsy-shop {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+        }
+        .etsy-item {
+            width: 30%;
+            padding: 1rem;
+            text-align: center;
+            border: 1px solid #ccc;
+            margin-bottom: 1rem;
+        }
+        img {
+            width: 100%;
+            height: auto;
+            margin-bottom: 1rem;
+        }
+        #contact {
+            width: 50%;
+            margin: 0 auto;
+            margin-bottom: 2rem;
+        }
+        #contact label {
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+        #contact input,
+        #contact textarea {
+            width: 100%;
+            padding: 0.3rem;
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <header id="header">
+        <h1>PrintedForgeFactory</h1>
+    </header>
+
+    <section id="main">
+        <section id="services">
+            <div class="service">
+                <img src="service1.jpg" alt="Service Image 1">
+                <h3>Service 1</h3>
+                <p>Service description...</p>
+            </div>
+            <div class="service">
+                <img src="service2.jpg" alt="Service Image 2">
+                <h3>Service 2</h3>
+                <p>Service description...</p>
+            </div>
+            <div class="service">
+                <img src="service3.jpg" alt="Service Image 3">
+                <h3>Service 3</h3>
+                <p>Service description...</p>
+            </div>
+        </section>
+
+        <section id="etsy-shop">
+            <h2>Etsy Shop Listings</h2>
+            <!-- Embed your Etsy shop listings here -->
+        </section>
+
+        <section id="contact">
+            <h2>Contact Us</h2>
+            <form action="">
+                <label for="name">Name</label>
+                <input type="text" id="name" required>
+
+                <label for="email">Email</label>
+                <input type="email" id="
+                email" required>
+
+                <label for="message">Message</label>
+                <textarea id="message" rows="5" required></textarea>
+
+                <input type="submit" value="Submit">
+            </form>
+        </section>
+    </section>
+</body>
+</html>
