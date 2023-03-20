@@ -27,6 +27,19 @@
     #logo {
       font-size: 24px;
       font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: #0077be;
+      display: flex;
+      align-items: center;
+    }
+
+    #logo span {
+      font-size: 20px;
+      font-weight: normal;
+      margin-left: 5px;
+      color: #999;
+      letter-spacing: 1px;
     }
 
     #shop-button {
@@ -74,17 +87,20 @@
     #products {
       padding: 50px;
       text-align: center;
+      background-color: #0077be;
     }
 
     #products h2 {
       font-size: 36px;
       font-weight: bold;
       margin-bottom: 20px;
+      color: #fff;
     }
 
     #products p {
       font-size: 24px;
       margin-bottom: 20px;
+      color: #fff;
     }
 
     #products img {
@@ -100,24 +116,28 @@
       flex-wrap: wrap;
       margin-top: 20px;
     }
-
-    #contact {
-      background-color: #ccc;
+    
+    #attention {
+      background-color: #f2f2f2;
       padding: 50px;
       text-align: center;
     }
-
-    #contact h2 {
+    
+    #attention h2 {
       font-size: 36px;
       font-weight: bold;
       margin-bottom: 20px;
     }
+    
+    #attention p {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
 
-    #contact form {
-      display: flex;
-      flex-direction: column;
-      max-width: 500px;
-      margin: 0 auto;
+    #contact {
+      background-color: #ccc;
+      padding: 50px;
+      text
       margin-top: 20px;
     }
 
@@ -140,11 +160,10 @@
       cursor: pointer;
     }
   </style>
-</
 </head>
 <body>
   <header>
-    <a href="#" id="logo">Printed Forge Factory</a>
+    <a href="#" id="logo">Printed Forge Factory<span>3D Printing Creations</span></a>
     <div>
       <a href="https://www.etsy.com/shop/printedforgefactory" target="_blank" id="shop-button">Shop</a>
       <a href="#contact" id="contact-button">Contact</a>
@@ -161,12 +180,19 @@
   <section id="products">
     <div>
       <h2>Our Products</h2>
-      <p>At Printed Forge Factory, we offer a wide variety of 3D printed creations, including dragons, fidget toys, and more. All of our prints are done on a Bambu Labs X1 Carbon and Prusa Mini, ensuring the highest quality and precision.</p>
+      <p style="color:#fff;">At Printed Forge Factory, we offer a wide variety of 3D printed creations, including dragons, fidget toys, and more. All of our prints are done on a Bambu Labs X1 Carbon and Prusa Mini, ensuring the highest quality and precision.</p>
       <div>
-        <img src="https://i.imgur.com/nOyJi33.jpg" alt="3D printed fidget toy">
-        <img src="https://i.imgur.com/k0s9s7V.jpg" alt="3D printed dragon">
-        <img src="https://i.imgur.com/xQjk8KT.jpg" alt="3D printed object">
+        <img src="https://i.imgur.com/O8ls0ST.jpg" alt="3D printed fidget toy">
+        <img src="https://i.imgur.com/mABYxOR.jpg" alt="3D printed dragon">
+        <img src="https://i.imgur.com/4lRVf6I.jpg" alt="3D printed object">
       </div>
+    </div>
+  </section>
+  
+  <section id="attention">
+    <div>
+      <h2>Why Choose Printed Forge Factory?</h2>
+      <p>We offer unique and high-quality 3D printed creations that you won't find anywhere else. Our prints are done with precision and care, ensuring that every piece is of the highest quality. Plus, our customer service is second to none. We're always here to answer your questions and help you with your purchase. So why wait? Explore our selection today and discover the perfect 3D printed creation for you!</p>
     </div>
   </section>
 
