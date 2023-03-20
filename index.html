@@ -1,215 +1,264 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Printed Forge Factory</title>
+  <title>Printed Forge Factory - 3D Printing Creations</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
+    * {
+      box-sizing: border-box;
       margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: sans-serif;
+      font-size: 16px;
+      line-height: 1.5;
     }
 
     header {
-      background-color: #333;
-      color: #fff;
+      background-color: #f2f2f2;
       display: flex;
       justify-content: space-between;
-      padding: 20px;
-    }
-
-    header a {
-      color: #fff;
-      text-decoration: none;
-      margin-left: 20px;
+      align-items: center;
+      padding: 10px 20px;
     }
 
     #logo {
       font-size: 24px;
       font-weight: bold;
-      text-transform: uppercase;
-      letter-spacing: 2px;
       color: #0077be;
-      display: flex;
-      align-items: center;
+      text-decoration: none;
     }
 
     #logo span {
-      font-size: 20px;
+      font-size: 16px;
       font-weight: normal;
-      margin-left: 5px;
-      color: #999;
-      letter-spacing: 1px;
+      color: #333;
     }
 
     #shop-button {
       background-color: #0077be;
       color: #fff;
-      border: none;
       padding: 10px 20px;
       border-radius: 5px;
-      margin-right: 20px;
-      cursor: pointer;
+      text-decoration: none;
+    }
+
+    #shop-button:hover {
+      background-color: #005d8f;
     }
 
     #contact-button {
-      background-color: #0077be;
-      color: #fff;
-      border: none;
+      background-color: #fff;
+      color: #0077be;
+      border: 2px solid #0077be;
       padding: 10px 20px;
       border-radius: 5px;
-      margin-right: 20px;
-      cursor: pointer;
+      margin-left: 10px;
+      text-decoration: none;
+    }
+
+    #contact-button:hover {
+      background-color: #0077be;
+      color: #fff;
     }
 
     #hero {
-      background-image: url(https://i.imgur.com/3it3EFS.jpg);
-      background-size: cover;
-      height: 400px;
+      background-image: url('https://i.imgur.com/m3qWmKc.jpg'), url('https://i.imgur.com/RmgKk5Z.jpg');
+      background-position: left bottom, right bottom;
+      background-repeat: no-repeat, no-repeat;
+      background-size: auto 100%;
+      height: 500px;
       display: flex;
-      align-items: center;
       justify-content: center;
-      text-align: center;
-      color: #fff;
+      align-items: center;
     }
 
     #hero h1 {
       font-size: 48px;
-      font-weight: bold;
-      margin-bottom: 20px;
+      color: #fff;
+      text-align: center;
+      text-shadow: 2px 2px #333;
     }
 
     #hero p {
       font-size: 24px;
-      margin-bottom: 20px;
+      color: #fff;
+      text-align: center;
+      margin-top: 20px;
+      text-shadow: 2px 2px #333;
     }
 
     #products {
+      background-color: #f2f2f2;
       padding: 50px;
-      text-align: center;
-      background-color: #0077be;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
     }
 
     #products h2 {
       font-size: 36px;
-      font-weight: bold;
       margin-bottom: 20px;
-      color: #fff;
+      color: #0077be;
     }
 
     #products p {
-      font-size: 24px;
-      margin-bottom: 20px;
-      color: #fff;
-    }
-
-    #products img {
-      width: 300px;
-      height: 300px;
-      margin-right: 20px;
+      font-size: 20px;
+      margin-bottom: 30px;
+      text-align: center;
+      color: #0077be;
     }
 
     #products div {
       display: flex;
+      flex-wrap: wrap;
       justify-content: center;
       align-items: center;
-      flex-wrap: wrap;
-      margin-top: 20px;
     }
-    
+
+    #products img {
+      width: 250px;
+      height: 250px;
+      margin: 20px;
+      object-fit: cover;
+      border-radius: 5px;
+    }
+
     #attention {
-      background-color: #f2f2f2;
+      background-color: #0077be;
       padding: 50px;
-      text-align: center;
-    }
-    
+      display: flex;
+      justify-content: center;
+      align-items: center;
     #attention h2 {
       font-size: 36px;
-      font-weight: bold;
       margin-bottom: 20px;
+      color: #fff;
     }
-    
+
     #attention p {
-      font-size: 24px;
-      margin-bottom: 20px;
+      font-size: 20px;
+      margin-bottom: 30px;
+      text-align: center;
+      color: #fff;
     }
 
-    #contact {
-      background-color: #ccc;
+    #form {
+      background-color: #f2f2f2;
       padding: 50px;
-      text
-      margin-top: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
     }
 
-    #contact input[type="text"],
-    #contact input[type="email"],
-    #contact textarea {
-      margin-bottom: 10px;
+    #form h2 {
+      font-size: 36px;
+      margin-bottom: 20px;
+      color: #0077be;
+    }
+
+    #form form {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+    }
+
+    #form input[type=text], #form input[type=email], #form textarea {
+      width: 100%;
+      margin-bottom: 20px;
       padding: 10px;
-      border: none;
       border-radius: 5px;
+      border: none;
+      box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
     }
 
-    #contact input[type="submit"] {
+    #form input[type=submit] {
       background-color: #0077be;
       color: #fff;
-      border: none;
       padding: 10px 20px;
       border-radius: 5px;
-      margin-top: 10px;
+      border: none;
       cursor: pointer;
+    }
+
+    #form input[type=submit]:hover {
+      background-color: #005d8f;
+    }
+
+    #footer {
+      background-color: #0077be;
+      color: #fff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+    }
+
+    #footer p {
+      font-size: 16px;
+      margin: 0;
+    }
+
+    #footer a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    #footer a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
 <body>
   <header>
-    <a href="#" id="logo">Printed Forge Factory<span>3D Printing Creations</span></a>
+    <a href="#" id="logo">Printed Forge Factory<span> - 3D Printing Creations</span></a>
     <div>
-      <a href="https://www.etsy.com/shop/printedforgefactory" target="_blank" id="shop-button">Shop</a>
-      <a href="#contact" id="contact-button">Contact</a>
+      <a href="https://www.etsy.com/shop/PrintedForgeFactory" id="shop-button">Shop</a>
+      <a href="#form" id="contact-button">Contact</a>
     </div>
   </header>
-
-  <section id="hero">
-    <div>
-      <h1>3D Printing Creations</h1>
-      <p>Discover the world of 3D printing with Printed Forge Factory</p>
-    </div>
-  </section>
-
-  <section id="products">
-    <div>
-      <h2>Our Products</h2>
-      <p style="color:#fff;">At Printed Forge Factory, we offer a wide variety of 3D printed creations, including dragons, fidget toys, and more. All of our prints are done on a Bambu Labs X1 Carbon and Prusa Mini, ensuring the highest quality and precision.</p>
-      <div>
-        <img src="https://i.imgur.com/O8ls0ST.jpg" alt="3D printed fidget toy">
-        <img src="https://i.imgur.com/mABYxOR.jpg" alt="3D printed dragon">
-        <img src="https://i.imgur.com/4lRVf6I.jpg" alt="3D printed object">
-      </div>
-    </div>
-  </section>
   
-  <section id="attention">
+  <div id="hero">
     <div>
-      <h2>Why Choose Printed Forge Factory?</h2>
-      <p>We offer unique and high-quality 3D printed creations that you won't find anywhere else. Our prints are done with precision and care, ensuring that every piece is of the highest quality. Plus, our customer service is second to none. We're always here to answer your questions and help you with your purchase. So why wait? Explore our selection today and discover the perfect 3D printed creation for you!</p>
+      <h1>Bring your ideas to life with 3D printing</h1>
+      <p>Customized designs for every occasion</p>
     </div>
-  </section>
+  </div>
 
-  <section id="contact">
+  <div id="products">
+    <h2>Our Creations</h2>
+    <p>Explore our collection of 3D printed creations</p>
     <div>
-      <h2>Contact Us</h2>
-      <form action="https://formspree.io/f/xvovbqpg" method="POST">
-        <label for="name">Name:</label>
-        <input type="text" name="name" id="name" required>
-        <label for="email">Email:</label>
-        <input type="email" name="email" id="email" required>
-        <label for="message">Message:</label>
-        <textarea name="message" id="message" rows="5" required></textarea>
-        <input type="submit" value="Send">
-      </form>
+      <img src="https://i.imgur.com/O8ls0ST.jpg" alt="3D printed dragon">
+      <img src="https://i.imgur.com/mABYxOR.jpg" alt="3D printed fidget toy">
+      <img src="https://i.imgur.com/4lRVf6I.jpg" alt="3D printed vase">
     </div>
-  </section>
+  </div>
 
+    <div id="attention">
+    <h2>Why choose Printed Forge Factory?</h2>
+    <p>All our prints are done in Las Vegas, NV on a Bambu Labs X1 Carbon and a Prusa Mini. We are a certified Cinderwings3D dealer, offering high-quality prints at affordable prices. In addition, we specialize in personalized prints that cater to your specific needs. Whether you need a customized gift for a loved one or a unique design for your business, we can help bring your ideas to life. Contact us today to learn more!</p>
+  </div>
+
+  <div id="form">
+    <h2>Contact Us</h2>
+    <form action="https://formspree.io/f/myybqvyd" method="POST">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="_replyto" placeholder="Your Email" required>
+      <textarea name="message" placeholder="Your Message" required></textarea>
+      <input type="submit" value="Send">
+    </form>
+  </div>
+
+  <footer>
+    <p>&copy; 2023 Printed Forge Factory - 3D Printing Creations</p>
+    <p>Website created by ChatGPT</p>
+  </footer>
 </body>
 </html>
