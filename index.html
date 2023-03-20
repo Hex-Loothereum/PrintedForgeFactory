@@ -2,17 +2,13 @@
 <html>
 <head>
   <title>Printed Forge Factory - 3D Printing Creations</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
-    * {
-      box-sizing: border-box;
+    body {
       margin: 0;
       padding: 0;
-    }
-
-    body {
-      font-family: sans-serif;
-      font-size: 16px;
-      line-height: 1.5;
+      font-family: Arial, sans-serif;
     }
 
     header {
@@ -20,82 +16,62 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 10px 20px;
+      padding: 20px;
+      position: sticky;
+      top: 0;
+      z-index: 1;
     }
 
     #logo {
-      font-size: 24px;
+      font-size: 32px;
       font-weight: bold;
       color: #0077be;
       text-decoration: none;
     }
 
     #logo span {
-      font-size: 16px;
       font-weight: normal;
-      color: #333;
     }
 
-    #shop-button {
-      background-color: #0077be;
-      color: #fff;
-      padding: 10px 20px;
-      border-radius: 5px;
-      text-decoration: none;
+    div {
+      display: flex;
     }
 
-    #shop-button:hover {
-      background-color: #005d8f;
-    }
-
-    #contact-button {
-      background-color: #fff;
+    a {
       color: #0077be;
-      border: 2px solid #0077be;
-      padding: 10px 20px;
-      border-radius: 5px;
-      margin-left: 10px;
+      font-weight: bold;
       text-decoration: none;
+      margin-left: 30px;
     }
 
-    #contact-button:hover {
-      background-color: #0077be;
-      color: #fff;
+    a:hover {
+      text-decoration: underline;
     }
 
     #hero {
-      background-image: url('https://i.imgur.com/m3qWmKc.jpg'), url('https://i.imgur.com/RmgKk5Z.jpg');
-      background-position: left bottom, right bottom;
-      background-repeat: no-repeat, no-repeat;
-      background-size: auto 100%;
-      height: 500px;
+      background-image: url(https://www.septillion.co.th/wp-content/uploads/BambuLab_X1_Carbon-Combo_on_web-2.webp);
+      height: 400px;
+      background-size: cover;
       display: flex;
       justify-content: center;
       align-items: center;
+      color: #fff;
+      text-align: center;
     }
 
     #hero h1 {
       font-size: 48px;
-      color: #fff;
-      text-align: center;
-      text-shadow: 2px 2px #333;
+      margin-bottom: 20px;
     }
 
     #hero p {
       font-size: 24px;
-      color: #fff;
-      text-align: center;
-      margin-top: 20px;
-      text-shadow: 2px 2px #333;
     }
 
     #products {
       background-color: #f2f2f2;
       padding: 50px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
+      text-align: center;
     }
 
     #products h2 {
@@ -107,42 +83,39 @@
     #products p {
       font-size: 20px;
       margin-bottom: 30px;
-      text-align: center;
       color: #0077be;
     }
 
     #products div {
       display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      align-items: center;
+      justify-content: space-around;
+      margin-top: 50px;
     }
 
     #products img {
-      width: 250px;
-      height: 250px;
-      margin: 20px;
-      object-fit: cover;
-      border-radius: 5px;
+      width: 300px;
+      height: 300px;
+      border-radius: 10px;
+      box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
     }
 
     #attention {
       background-color: #0077be;
       padding: 50px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      text-align: center;
+      color: #fff;
+      margin-top: 50px;
+    }
+
     #attention h2 {
       font-size: 36px;
       margin-bottom: 20px;
-      color: #fff;
     }
 
     #attention p {
       font-size: 20px;
       margin-bottom: 30px;
       text-align: center;
-      color: #fff;
     }
 
     #form {
@@ -152,6 +125,7 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
+      margin-top: 50px;
     }
 
     #form h2 {
@@ -163,87 +137,86 @@
     #form form {
       display: flex;
       flex-direction: column;
-      justify-content: center;
+      justify-content: center
       align-items: center;
-      width: 100%;
     }
 
-    #form input[type=text], #form input[type=email], #form textarea {
+    #form input[type="text"],
+    #form input[type="email"],
+    #form textarea {
       width: 100%;
       margin-bottom: 20px;
       padding: 10px;
-      border-radius: 5px;
       border: none;
-      box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+      border-radius: 5px;
+      font-size: 18px;
+      font-family: Arial, sans-serif;
     }
 
-    #form input[type=submit] {
-      background-color: #0077be;
-      color: #fff;
-      padding: 10px 20px;
-      border-radius: 5px;
+    #form input[type="submit"] {
+      width: 200px;
+      padding: 10px;
       border: none;
+      border-radius: 5px;
+      font-size: 18px;
+      font-weight: bold;
+      color: #fff;
+      background-color: #0077be;
       cursor: pointer;
     }
 
-    #form input[type=submit]:hover {
-      background-color: #005d8f;
+    #form input[type="submit"]:hover {
+      background-color: #005d8d;
     }
 
-    #footer {
+    footer {
       background-color: #0077be;
       color: #fff;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 10px 20px;
+      text-align: center;
+      padding: 20px;
+      position: absolute;
+      bottom: 0;
+      width: 100%;
     }
 
-    #footer p {
-      font-size: 16px;
+    footer p {
       margin: 0;
-    }
-
-    #footer a {
-      color: #fff;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    #footer a:hover {
-      text-decoration: underline;
+      font-size: 18px;
     }
   </style>
 </head>
+
 <body>
   <header>
-    <a href="#" id="logo">Printed Forge Factory<span> - 3D Printing Creations</span></a>
+    <div id="logo">
+      Printed Forge Factory
+    </div>
     <div>
-      <a href="https://www.etsy.com/shop/PrintedForgeFactory" id="shop-button">Shop</a>
-      <a href="#form" id="contact-button">Contact</a>
+      <a href="#shop">Shop</a>
+      <a href="#form">Contact</a>
     </div>
   </header>
-  
+
   <div id="hero">
     <div>
-      <h1>Bring your ideas to life with 3D printing</h1>
-      <p>Customized designs for every occasion</p>
+      <h1>Printed Forge Factory</h1>
+      <p>Your one-stop shop for 3D printing creations</p>
     </div>
   </div>
 
   <div id="products">
     <h2>Our Creations</h2>
-    <p>Explore our collection of 3D printed creations</p>
+    <p>Check out some of our popular creations below:</p>
     <div>
-      <img src="https://i.imgur.com/O8ls0ST.jpg" alt="3D printed dragon">
-      <img src="https://i.imgur.com/mABYxOR.jpg" alt="3D printed fidget toy">
-      <img src="https://i.imgur.com/4lRVf6I.jpg" alt="3D printed vase">
+      <img src="https://i.imgur.com/O8ls0ST.jpg" alt="Dragon" />
+      <img src="https://i.imgur.com/mABYxOR.jpg" alt="Fidget Toy" />
+      <img src="https://i.imgur.com/4lRVf6I.jpg" alt="Custom Print" />
     </div>
   </div>
 
-    <div id="attention">
+  <div id="attention">
     <h2>Why choose Printed Forge Factory?</h2>
-    <p>All our prints are done in Las Vegas, NV on a Bambu Labs X1 Carbon and a Prusa Mini. We are a certified Cinderwings3D dealer, offering high-quality prints at affordable prices. In addition, we specialize in personalized prints that cater to your specific needs. Whether you need a customized gift for a loved one or a unique design for your business, we can help bring your ideas to life. Contact us today to learn more!</p>
+    <p>All our prints are done in Las Vegas, NV on a Bambu Labs X1 Carbon. We are a certified Cinderwings3D dealer, offering high-quality prints at affordable prices. In addition, we specialize in personalized prints that cater to your specific needs. Whether you need a customized gift for a loved one or a unique design for your business, we can help bring your ideas to life. Contact us today to learn more!</p>
   </div>
 
   <div id="form">
@@ -258,7 +231,9 @@
 
   <footer>
     <p>&copy; 2023 Printed Forge Factory - 3D Printing Creations</p>
-    <p>Website created by ChatGPT</p>
+    <p>Website created by ChatGPT
+    </p>
   </footer>
 </body>
+
 </html>
